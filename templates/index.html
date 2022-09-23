@@ -6,12 +6,37 @@
     <title>Umfrage</title>
     <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}">
     <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
-
 </head>
-<body>
-Umfrage
-{% for y in  query%}
-    {{ y }}
-{% endfor %}
+<body style="overflow-x:hidden">
+
+<div style="text-align: center; justify-content: center;margin-top: 2.5%">
+
+<h3>Umfrage MTS 11</h3>
+<div style="margin-top: 2.5%"></div>
+<form method="post" action="{% url "success" %}">
+    {% csrf_token %}
+    {% for question in data %}
+        {% if question.question_type == "text" %}
+            <div class="row" style="text-align: center; justify-content: center;margin-bottom: 2%;">
+                <div class="card" style="max-width: 36rem; padding:0">
+                    <div class="card-header text-white bg-info ">
+                        <label for="{{ forloop.counter0 }}">{{ question.question_text }}</label>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="{{ forloop.counter0 }}"
+                                   name="{{ forloop.counter0 }}"
+                                   value=""><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <input type="submit" value="Submit" class="btn btn-outline-info">
+</form>
+</div>
+<div style="margin-bottom: 2.5%"></div>
+
 </body>
 </html>
