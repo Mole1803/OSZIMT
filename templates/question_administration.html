@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question Administration</title>
+</head>
+<body>
+<form method="post" action="{% url "create_question" %}">
+    {% csrf_token %}
+
+    <label for="1"></label><br>
+    <input type="text" id="1" name="question" value=""><br>
+
+    <label for="type">Choose a Typefield:</label><br>
+    <select id="type" name="question_type">
+        <option value="checkbox">Checkbox</option>
+        <option value="text">Text</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
