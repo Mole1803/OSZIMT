@@ -3,23 +3,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
     <title>Question Administration</title>
 </head>
 <body>
-<form method="post" action="{% url "create_question" %}">
-    {% csrf_token %}
+<div style="text-align: center; justify-content: center;margin-top: 2.5%">
+    <h3>Adminboard create question</h3>
+    <form method="post" action="{% url "create_question" %}">
+        {% csrf_token %}
+        <div class="row" style="text-align: center; justify-content: center;margin-bottom: 2%;">
 
-    <label for="1"></label><br>
-    <input type="text" id="1" name="question" value=""><br>
+            <div class="card" style="max-width: 36rem; padding:0">
 
-    <label for="type">Choose a Typefield:</label><br>
-    <select id="type" name="question_type">
-        <option value="checkbox">Checkbox</option>
-        <option value="text">Text</option>
-    </select>
-    <br>
-    <input type="submit" value="Submit">
-</form>
-
+                <div class="card-header text-white bg-danger ">
+                    <label for="1"></label><br>
+                </div>
+                <div style="margin:2.5%">
+                    <input class="form-control" type="text" id="1" name="question" value=""><br>
+                </div>
+                <div style="margin:2.5%; margin-top:0">
+                    <label for="type">Choose a type:</label><br>
+                    <select class="form-control" id="type" name="question_type">
+                        <option value="checkbox">Checkbox</option>
+                        <option value="text">Text</option>
+                    </select>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-outline-danger">
+    </form>
+</div>
 </body>
 </html>
