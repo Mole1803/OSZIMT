@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
+
+    <title>Survey Overview</title>
+</head>
+<body>
+<table class="table table-dark table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Survey Name</th>
+        <th scope="col">Survey Link</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for survey in surveys %}
+        <tr>
+            <td>{{ survey.title }}</td>
+            <td><a href="{% url 'survey' survey.title %}">{% url 'survey' survey.title %}</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

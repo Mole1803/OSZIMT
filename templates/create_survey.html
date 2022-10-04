@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
+    <script src="{% static 'components/question_card/question_card.js' %}"></script>
+    <title>Create survey</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Create survey</h1>
+            <form action="{% url 'create_survey' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" class="form-control">
+                </div>
+                <div class="form-group" style="margin-bottom: 2%;">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <div id="question" style="margin-top: 4%">
+                    <question-card id="question_card_1" question_id="1"></question-card>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

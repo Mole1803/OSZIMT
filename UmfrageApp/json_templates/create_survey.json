@@ -1,0 +1,27 @@
+{
+  "title": "The Lord of the Rings",
+  "description": "The Lord of the Rings is an epic high fantasy novel written by English author and scholar J. R. R. Tolkien. The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work. Written in stages between 1937 and 1949, The Lord of the Rings is one of the best-selling novels ever written, with over 150 million copies sold.",
+  "questions":{
+    "question_1": {
+      "question": "What is the name of the main character?",
+      "html_representation": "radio",
+      "answer_choices": {
+        "answer_1": "Frodo",
+        "answer_2": "Sam",
+        "answer_3": "Gandalf",
+        "answer_4": "Bilbo"
+      }
+
+    },
+    "question_2": {
+      "question": "What is the name of the main character's friend?",
+      "html_representation": "radio",
+        "answer_choices": {
+            "answer_1": "Frodo",
+            "answer_2": "Sam",
+            "answer_3": "Gandalf",
+            "answer_4": "Bilbo"
+        }
+    }
+  }
+}
